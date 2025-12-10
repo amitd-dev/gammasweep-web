@@ -142,10 +142,40 @@
   }
 }
 
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes orbit-soft {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-shimmer {
   animation: shimmer 2s ease-in-out infinite;
 }
 
 .animate-spin-slow {
   animation: spin-slow 3s linear infinite;
+}
+
+.animate-float-soft {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+.animate-orbit-soft {
+  animation: orbit-soft 18s linear infinite;
 }
