@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
@@ -27,16 +28,17 @@ export function Hero() {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-[600px] aspect-video rounded-xl overflow-hidden shadow-2xl border bg-muted/50">
-             {/* Placeholder for Video/Image */}
-             <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-muted-foreground">Promo Video Placeholder</p>
-                {/* In a real scenario, use an iframe or video tag */}
-             </div>
-             <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
+             <Image 
+               src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop"
+               alt="Casino Gaming Platform"
+               fill
+               className="object-cover"
+               priority
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
     </section>
   )
 }
-
