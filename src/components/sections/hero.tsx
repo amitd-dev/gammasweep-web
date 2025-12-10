@@ -27,15 +27,44 @@ export function Hero() {
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-[600px] aspect-video rounded-xl overflow-hidden shadow-2xl border bg-muted/50">
-             <Image 
-               src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop"
-               alt="Casino Gaming Platform"
-               fill
-               className="object-cover"
-               priority
-             />
-             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent pointer-events-none" />
+          
+          {/* Image container with effects */}
+          <div className="relative mx-auto w-full max-w-[600px]">
+            {/* Animated gradient glow background */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-primary opacity-75 blur-2xl animate-pulse rounded-xl" />
+            
+            {/* Rotating gradient border effect */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-primary rounded-xl opacity-50 animate-spin-slow" 
+                 style={{ animationDuration: '3s' }} />
+            
+            {/* Main image container */}
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border-2 border-primary/20 bg-muted/50 backdrop-blur-sm">
+              <Image 
+                src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop"
+                alt="Casino Gaming Platform"
+                fill
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                priority
+              />
+              
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent pointer-events-none" />
+              
+              {/* Shimmer effect on hover */}
+              <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" 
+                     style={{ animationDuration: '2s' }} />
+              </div>
+              
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary/50 rounded-tl-xl" />
+              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-primary/50 rounded-br-xl" />
+            </div>
+            
+            {/* Floating particles effect */}
+            <div className="absolute top-1/4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 -left-4 w-32 h-32 bg-secondary/20 rounded-full blur-3xl animate-pulse" 
+                 style={{ animationDelay: '1s' }} />
           </div>
         </div>
       </div>
